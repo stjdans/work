@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>실시간 원형 차트</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./chat.js"></script>
+</head>
+<body>
+  <h2>실시간 판매 데이터</h2>
+  <canvas id="myPieChart" width="200" height="200"></canvas>
+
+  <script>
+    const ctx = document.getElementById('myPieChart').getContext('2d');
+
+    const myPieChart = getChart()
+    
+    // 2초마다 데이터 갱신
+    setInterval(() => {
+      myPieChart.data.datasets[0].data = generateRandomData();
+      myPieChart.update();
+    }, 2000);
+  </script>
+</body>
+</html>

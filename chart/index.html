@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>차트 그리기</title>
+
+        <!-- 스타일 -->
+        <style>
+            .container {
+                width: 100%;
+                border: 1px solid blue;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
+            .canvas_box {
+                width: 250px;
+                height: 250px;
+                margin: 5px;
+                border: 1px solid greenyellow;
+                box-shadow: 0 0 1em rgba(25, 0, 58, 0.1);
+            }
+        </style>
+
+        <!-- 스크립트 -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="./js/chat.js"></script>
+
+    </head>
+    <body>
+        <h1>차트그리기</h1>
+        <div class="container">
+            <div class="canvas_box">
+                <canvas class="canvas"></canvas>
+            </div>
+            <div class="canvas_box">
+                <canvas class="canvas"></canvas>
+            </div>
+            <div class="canvas_box">
+                <canvas class="canvas"></canvas>
+            </div>
+            <div class="canvas_box">
+                <canvas class="canvas"></canvas>
+            </div>
+            <div class="canvas_box">
+                <canvas class="canvas"></canvas>
+            </div>
+            <div class="canvas_box">
+                <canvas class="canvas"></canvas>
+            </div>
+
+        </div>
+
+        <script>
+            els = document.getElementsByClassName('canvas')
+            const creator = [
+                    getPiChart,
+                    getBarChart,
+                    getDoughnutChart,
+                    getLineChart,
+                    getBubbleChart,
+                    getPolarChart
+            ];
+            for(let i = 0; i < els.length; i++) {
+                const ctx = els[i].getContext('2d');
+                creator[i](ctx).updateRandom();
+            }
+            
+        </script>
+    
+    </body>
+</html>

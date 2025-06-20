@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>송성문의 웹 페이지</title>
+
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+            @import url('./css/mobile.css') screen; 
+            @import url('./css/pc.css') screen and (min-width:768px);
+        
+            body {
+                background: url(./img/배경.jpeg) no-repeat left top fixed;
+                background-size: cover;
+            }
+            p {
+                text-align: center;
+            }
+            .container {
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .box {
+                padding: 5px 30px;
+                margin: 5px;
+                width: 100px;
+                background-color: aqua;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="head_container">
+                <h1 class="title">SSM</h1>
+                <div class="subtitle" ><span>모바일</span></div>
+            </div>
+
+            <div class="container" id="menu">
+                <div class="box"><p>1</p></div>
+                <div class="box"><p>2</p></div>
+                <div class="box"><p>3</p></div>
+                <div class="box"><p>4</p></div>
+                <div class="box"><p>5</p></div>
+            </div>
+            <div class="menu">
+
+            </div>
+        </header>
+            
+    </body>
+</html>

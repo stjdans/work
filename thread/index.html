@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="./js/main.js" defer></script>
+    </head>
+    <body>
+        <h1>스레드 테스트</h1>
+
+        <button style="width: 100px; height: 50px">클릭</button>
+
+        <script>
+            const worker = new Worker('./js/worker.js');
+            worker.postMessage(10);
+
+            worker.onmessage = function (e) {
+                console.log('결과', e.data);
+            }
+
+            /*document.getElementsByTagName('button')[0].onclick = function(e) {
+                worker.postMessage(Math.random() * 100)
+            } */
+
+            document.getElementsByTagName('button')[0].addEventListener('click', () => {
+                worker.postMessage(Math.random() * 100)
+            })
+            
+        </script>
+    </body>
+</html>
